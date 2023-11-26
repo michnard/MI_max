@@ -13,6 +13,6 @@ Try the effects of adding positive, negative, or zero noise correlations to a pa
 
 Simply open https://michnard.github.io/MI_max and run the jupyter notebooks.
 
-If you want to read more about this, please visit: https://www.jneurosci.org/content/early/2023/09/26/JNEUROSCI.0194-23.2023 (or freely accessible, earlier preprint at https://www.biorxiv.org/content/10.1101/2021.09.28.460602v1)
+The same effects carry over to larger and more complicated populations of neurons. If you want to read more about this, please visit: https://www.jneurosci.org/content/early/2023/09/26/JNEUROSCI.0194-23.2023 (or freely accessible, earlier preprint at https://www.biorxiv.org/content/10.1101/2021.09.28.460602v1); and the beautiful, original paper from Gašper Tkačik et al (https://pubmed.ncbi.nlm.nih.gov/20660781/)
 
 Please reach out for questions, comments, and requests!
