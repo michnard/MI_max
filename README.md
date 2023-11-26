@@ -1,29 +1,17 @@
-# JupyterLite Demo
+# Are Noise correlations truly information-limiting?
 
-[![lite-badge](https://jupyterlite.rtfd.io/en/latest/_static/badge.svg)](https://jupyterlite.github.io/demo)
+Neural co-variability can be partitioned into an explainable component, driven by external stimuli, oscillations, and other global signals; and an unexplained component, or “noise” correlations, which can lead to profound coding (dis)advantages.
+Traditionally, noise correlations are analyzed by comparing the information content of data population responses with an alternative synthetic code where the neurons **preserve their tuning but are otherwise independent**. 
+These analyses usually conclude that noise correlations are information-limiting. **Such manipulations do not represent a neural code that is biologically realizable**: in the brain, tuning is affected both by upstream inputs and local network interactions. 
 
-JupyterLite deployed as a static site to GitHub Pages, for demo purposes.
+Instead, we conduct our analyses within a stochastic model of spiking neurons ($x_1, x_2 \in \{ 0 , 1 \}^2$) with controllable stimulus-dependent upstream inputs ($f_1(s), f_2(s)$) and tunable noise correlations ($c$), which represent effective local network interactions and unaccounted-for external driving variables.
 
-## ✨ Try it in your browser ✨
+$$P(x | s) \propto \exp (f_1(s)x_1 + f_2(s)x_2 + c x_1x_2)$$
 
-➡️ **https://jupyterlite.github.io/demo**
+Try the effects of adding positive, negative, or zero noise correlations to a pair of cells with completely tunable inputs by yourself!
 
-![github-pages](https://user-images.githubusercontent.com/591645/120649478-18258400-c47d-11eb-80e5-185e52ff2702.gif)
+Simply open https://michnard.github.io/MI_max and run the jupyter notebooks.
 
-## Requirements
+If you want to read more about this, please visit: https://www.jneurosci.org/content/early/2023/09/26/JNEUROSCI.0194-23.2023 (or freely accessible, earlier preprint at https://www.biorxiv.org/content/10.1101/2021.09.28.460602v1)
 
-JupyterLite is being tested against modern web browsers:
-
-- Firefox 90+
-- Chromium 89+
-
-## Deploy your JupyterLite website on GitHub Pages
-
-Check out the guide on the JupyterLite documentation: https://jupyterlite.readthedocs.io/en/latest/quickstart/deploy.html
-
-## Further Information and Updates
-
-For more info, keep an eye on the JupyterLite documentation:
-
-- How-to Guides: https://jupyterlite.readthedocs.io/en/latest/howto/index.html
-- Reference: https://jupyterlite.readthedocs.io/en/latest/reference/index.html
+Please reach out for questions, comments, and requests!
