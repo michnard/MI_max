@@ -20,16 +20,16 @@ Please reach out for questions, comments, and requests!
 # Detailed instructions
 
 1) open https://michnard.github.io/MI_max
-2) in the list of files on the left, double click on the script you want to run
-3) run cells by Shift + Enter, or using the button |>
+2) in the list of files on the left, double click on the script you want to run (or click directly on the links below)
+3) run cells by Shift + Enter, or using the button 'run' ($\triangleright$)
 4) have fun playing around with the sliders!
 
 # list of available scripts
 
-**2cells_covariability_source**: the same marginal statistics (firing fields) can be obtained by many combinations of input tuning and noise correlations (NC). Vary the NC $\omega$ slider to see what input tuning gives rise to the same (fixed) firing fields. 
+**2cells_covariability_source**: the same marginal statistics (firing fields) can be obtained by many combinations of input tuning and noise correlations (NC). Vary the NC $\omega$ slider to see what input tuning gives rise to the same (fixed) firing fields (https://michnard.github.io/MI_max/lab?path=2cells_covariab_source.ipynb)
 
-**2cells_MI**: vary width, gain, and bias of the input tuning, and see the effect of various levels of noise correlations on output firing fields and mutual information between stimulus and response.
+**2cells_MI**: vary width, gain, and bias of the input tuning, and see the effect of various levels of noise correlations on output firing fields and mutual information between stimulus and response. (https://michnard.github.io/MI_max/lab?path=2cells_MI.ipynb)
 
-**2cells_MI_fixAvg**: same as above, but average firing rate is fixed for all choices of noise correlations.
+**2cells_MI_fixAvg**: same as above, but average firing rate is fixed for all choices of noise correlations. (https://michnard.github.io/MI_max/lab?path=2cells_MI_fixAvg.ipynb)
 
 **NOTE!!** the actual python code for the interactive widgets above can be found in the content/libr subfolder (Here: https://github.com/michnard/MI_max/blob/main/content/libr)
