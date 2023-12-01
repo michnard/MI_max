@@ -63,11 +63,12 @@ def plot_data(tuning,MIs,fields,avg_f):
     # plot tuning
     plt.subplot(2,3,1)
     tunplot = plt.plot(tuning)
+    plt.ylim([-0.05,4.05])
     plt.xticks([0,20],[0,1])
     plt.ylabel('input tuning')
     plt.xlabel('stimulus')
     # as title, puth width, bias, gain, and distance
-    plt.title('w='+str(width)+' g='+str(gain)+' d='+str(dist))
+    plt.title('$f_1, f_2$: w='+str(width)+' g='+str(gain)+' d='+str(dist))
 
     # plot MI for various choices of c
     plt.subplot(2,3,2)
@@ -76,23 +77,24 @@ def plot_data(tuning,MIs,fields,avg_f):
     # as title use optimal c
     plt.title('$\omega_{opt}$='+str(np.round(best_c,2)))
     vl = plt.axvline(x = best_c,color='k',alpha=0.5,ls='--')
-    plt.xlabel('noise corr (c)')
-    plt.ylabel('MI(x;s)')
+    plt.xlabel('noise corr ($\omega$)')
+    plt.ylabel(r'$MI(\mathbf{\sigma};s)$')
 
     # plot total resulting fields
     plt.subplot(2,3,4)
     FRplot = plt.plot(fields)
-    plt.title('Obs. Fields @ $\omega_{opt}$')
+    plt.title('Marginals (Obs. Fields) @ $\omega_{opt}$')
+    plt.legend(['$P(\sigma_1=1|s)$','$P(\sigma_2=1|s)$'])
     plt.ylim([-0.05,1.05])
     plt.xticks([0,20],[0,1])
     plt.xlabel('stimulus')
-    plt.ylabel(r'$P(x_i | s)$')
+    plt.ylabel(r'$P(\sigma_i | s)$')
 
     plt.subplot(2,3,5)
     avgfplot=plt.plot(pox_c,avg_f,color='red',alpha=0.6,label='Tot. Fir')
     plt.ylabel('Avg. FR')
     plt.ylim([0.1,0.9])
-    plt.xlabel('noise corr (\omega)')
+    plt.xlabel('noise corr ($\omega$)')
     # as title, put avg fir for optimal omega
     plt.title('FR($\omega_{opt}$)='+str(np.round(avg_f[np.argmax(MIs)],2)))
     # plt.axvline(x = best_c,color='k',alpha=0.5,ls='--')
@@ -120,7 +122,7 @@ def sliders(fig):
     ax3 = fig.add_axes([0.75, 0.7, 0.15, 0.03])
     gain_slider = Slider(
         ax=ax3,
-        label='Gain ',
+        label='Gain (SNR) ',
         valmin=0,
         valmax=5,
         valinit=gain
@@ -164,9 +166,9 @@ def update(val):
     for i in range(2):
         tunplot[i].set_ydata(tun[:,i])
         # adjust title and round value to 2 decimals
-        tunplot[i].axes.set_title('w='+str(np.round(width,2))+' g='+str(np.round(gain,2))+' d='+str(np.round(dist,2)))
+        tunplot[i].axes.set_title('$f_1, f_2$: w='+str(np.round(width,2))+' g='+str(np.round(gain,2))+' d='+str(np.round(dist,2)))
         # adjust ylim 
-        tunplot[i].axes.set_ylim([min(np.min(tun),-0.07*np.max(tun)),max(2,np.max(tun)*1.07)])
+        tunplot[i].axes.set_ylim([min(np.min(tun)*1.07,-0.05),max(4,np.max(tun)*1.07)])
         FRplot[i].set_ydata(fields[:,i])
     # adjust position of vertical line
     vl.set_xdata(best_c)
